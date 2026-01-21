@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<GenericPaginationResponse<UserDTO>> findAll(@PageableDefault(size = 20) Pageable pageable) {
+    public ResponseEntity<GenericPaginationResponse<UserDTO>> findAll(Pageable pageable) {
         GenericPaginationResponse<UserDTO> response = userFacade.findAll(pageable);
         return ResponseEntity.status(response.getStatus()).body(response);
     }
